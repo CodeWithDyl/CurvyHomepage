@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>This Moment Here</title>
+
+        <!-- CSS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+            rel="stylesheet">
+
+        <style>
+                body{
+                    margin: 0;
+                    font-family: 'Ubuntu', sans-serif;
+                    color: white;
+                    background-color: #1a1a1a;
+                    /* overflow: hidden; */
+                }
+
+                section{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    min-height: 400px;
+                    padding: 100px 20vw;
+                }
+                .red{
+                    background-color: #ff0000;
+                }
+                .blue{
+                    background-color: #4169e1;
+                }
+                .light{
+                    background-color: #ffffff;
+                }
+                .gray{
+                    background-color: #1a1a1a;
+                }
+                .dark{
+                    background-color: #000000;
+                }
+                .curve{
+                    position: absolute;
+                    height: 225px;
+                    width: 100%;
+                    bottom: 0;
+                }
+
+                .curve::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    border-radius: 100% 50%;
+                    width: 55%;
+                    height: 100%;
+                    background-color: #1a1a1a;
+                    transform: translate(85%, 60%);
+                }
+
+                .curve::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    border-radius: 100% 50%;
+                    width: 55%;
+                    height: 100%;
+                    background-color: gray;
+                    transform: translate(-4%, 40%);
+                    z-index: -1;
+                }
+
+                .bubble::after{
+                    content: '';
+                    border-top-left-radius: 50% 100%;
+                    border-top-right-radius: 50% 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 95%;
+                    width: 100%;
+                    background-color: #4169e1;
+                    z-index: -1;
+                }
+                .wave {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    line-height: 0;
+                }
+                .wave svg {
+                    position: relative;
+                    display: block;
+                    width: calc(136% + 1.3px);
+                    height: 218px;
+                }
+                
+                .wave .shape-fill {
+                    fill: #4169e1;
+                }
+
+                /* SVG Layered Wave */
+                .spacer{
+                    aspect-ratio: 900/300;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                .layer1{
+                    background-image: url('./waves.svg');
+                }
+                /* another SVG  */
+                .layer2{
+                    background-image: url('./wave2.svg');
+                }
+                .layer3{
+                    background-image: url('./peak-bottom.svg');
+                }
+                .flip{
+                    transform: rotate(180deg);
+                }
+            </style>
+    </head>
+    <body>
+
+        <section class="blue">
+            <h1>Nice Curves</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                ad sed nesciunt, quaerat animi ipsam. Sunt sequi, incidunt enim
+                officiis provident itaque quaerat, minima porro maxime ipsum,
+                sit deleniti reprehenderit.</p>
+            <div class="curve"></div>
+        </section>
+        <section class="gray">
+            <h1>Nice Curves</h1>
+            <p>Eos ducimus dolores est nemo explicabo corporis quia repellendus
+                perspiciatis excepturi! Soluta culpa temporibus perferendis
+                doloremque dignissimos voluptas. Nulla fugiat labore nihil
+                blanditiis enim cum maxime, velit similique! Amet, ab.</p>
+        </section>
+        <section class="bubble">
+            <h1>Nice Curves</h1>
+            <p>Commodi eum ad optio eligendi cupiditate deleniti temporibus,
+                voluptates ea nisi excepturi, ab tempore. Aliquid dolores quam
+                asperiores a inventore error doloremque voluptatibus itaque
+                fugiat, quasi, saepe dolor. A, nesciunt.</p>
+        </section>
+        <section class="gray">
+            <h1>Nice Curves</h1>
+            <p>Aliquam repellendus consectetur ipsam ex est placeat. Ducimus
+                itaque tempore quas quis debitis perspiciatis porro nihil
+                pariatur magni soluta iste facere, ipsum impedit, asperiores
+                adipisci in eum. Voluptas, provident libero?</p>
+            <div class="wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+        <section class="blue">
+            <h1>Nice Curves</h1>
+            <p>Maxime eos consectetur numquam officiis illum odio minima.
+                Explicabo voluptate doloremque cum nesciunt ullam minima?
+                Provident dolore eum officia perferendis totam sequi dolor
+                numquam porro officiis iusto hic, aperiam molestiae.</p>
+
+        </section>
+        <div class="spacer layer1 flip"></div>
+
+        <div class="spacer layer1 "></div>
+        <section>
+            <h1>Nice Curves</h1>
+            <p>Delectus facere sed tempore odit ducimus, temporibus, eum iure,
+                aperiam rerum eos dolor nesciunt adipisci voluptatem officiis
+                itaque. Ipsum vitae voluptatum magni tenetur ipsam? Dignissimos
+                quasi nisi perspiciatis fugiat omnis.</p>
+        </section>
+        <div class="spacer layer3"></div>
+        <div class="spacer layer3 flip"></div>
+        <section>
+            <h1>Nice Curves</h1>
+            <p>Soluta quia, eos sapiente, deleniti accusantium ab modi quidem
+                maiores quis voluptatum id nulla reprehenderit laudantium qui,
+                labore harum culpa nisi. Earum inventore molestiae saepe
+                eligendi pariatur, dolores dolorem perferendis.</p>
+        </section>
+
+        <div class="spacer layer2"></div>
+        <section>
+            <h1>Nice Curves</h1>
+            <p>Ut blanditiis consequuntur facere expedita eligendi minima
+                voluptates eos reiciendis? Obcaecati, repellendus! Quia sint
+                quos quam maiores enim veniam. Voluptate delectus consequuntur
+                pariatur ducimus accusantium, doloribus voluptates sapiente
+                aspernatur excepturi!</p>
+        </section>
+
+    </body>
+</html>
